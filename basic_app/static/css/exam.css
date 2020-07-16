@@ -1,0 +1,317 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+html,body{
+  min-height: 100%;
+}
+body, html {
+  height: 100%;
+}
+#container{
+  min-height: 100%;
+}
+#main{
+  padding-bottom: 100px;
+}
+
+.footer{
+    background-color: #292929;
+    color: white;
+    position: relative;
+    margin-top: -100px;
+    clear: both;
+}
+.footer a{
+  color: white;
+}
+.footer a:hover{
+  color: #33AAFF;
+}
+
+
+
+
+.bg-exam-list{
+  background-image: url("../images/img1.jpg");
+  background-size: cover;
+  margin-top: 3.5em;
+  padding-top: 15em;
+  padding-bottom: 15em;
+
+}
+.search-bar-container
+{
+  opacity: 0.7;
+  margin-top:-10em;
+}
+.bg-about{
+  background-image: url("../images/img2.jpg");
+  background-size: cover;
+  margin-top: 3.5em;
+  padding-top: 10em;
+  padding-bottom: 3em;
+}
+.about-container{
+  opacity: 0.7;
+  margin-top: -4em;
+}
+.bg-upload-paper{
+  background-image: url("../images/img-exam.jpg");
+  background-size: cover;
+  margin-top: 3.5em;
+  padding-top: 8em;
+  padding-bottom: 8em;
+}
+.upload-paper-container{
+  opacity: 1;
+  margin-top: -6em;
+}
+.bg-notes{
+  background-image: url("../images/img-notes.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 4em;
+  padding-bottom: 4em;
+  margin-bottom:2em;
+}
+.bg-exam{
+  background-image: url("../images/img-exam.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+.techfont-upload-paper{
+    font-family: 'Russo One', sans-serif;
+    font-size: 1.5em;
+}
+.notes-or-paper-container{
+  margin-top: 3.5em;
+}
+.registration-container{
+  margin-top: 2em;
+}
+.techfont-exam-list{
+  font-family: 'Russo One', sans-serif;
+  font-size: 0.7em;
+  margin-bottom: 6px;
+}
+.techfont-about{
+  font-family: 'Russo One', sans-serif;
+  font-size: 0.2em;
+  margin-bottom: 4px;
+}
+.precised-list-container{
+  margin-top: 5em;
+  margin-bottom: 2em;
+}
+.successfull-submission-container{
+   margin-top: 5em;
+}
+.confirm-delete-container{
+    margin-top:5em;
+}
+.progress-bar-container{
+  margin-top: 2em;
+}
+@media (max-width:480px){
+
+  .bg-exam-list{
+    background-image: url("../images/img1.jpg");
+    background-size: cover;
+    background-position:center;
+    margin-top: 4.3em;
+    padding-top: 10em;
+    padding-bottom: 3em;
+  }
+  .search-bar-container
+  {
+    opacity: 0.7;
+    margin-top:-7em;
+  }
+  .bg-about{
+    background-image: url("../images/img2.jpg");
+    background-size: cover;
+
+    margin-top: 4.3em;
+    padding-top: 10em;
+    padding-bottom: 2em;
+  }
+  .bg-upload-paper{
+    background-image: url("../images/img-exam.jpg");
+    background-size: cover;
+    margin-top: 4.3em;
+    padding-top: 8em;
+    padding-bottom: 8em;
+  }
+  .notes-or-paper-container{
+    margin-top: 3.5em;
+  }
+  .bg-notes{
+    background-image: url("../images/img-notes.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 4em;
+    padding-bottom: 5.5em;
+    margin-bottom:2em;
+  }
+  .bg-exam{
+    background-image: url("../images/img-exam.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 4em;
+    padding-bottom: 7em;
+  }
+  .navbar-fixed-top{
+    opacity: 0.7;
+  }
+  .techfont-exam-list{
+    font-family: 'Russo One', sans-serif;
+    font-size: 1em !important;
+    margin-bottom: 5px !important;
+  }
+  .techfont-about{
+    font-family: 'Russo One', sans-serif;
+    font-size: 0em;
+    margin-bottom: 0px;
+  }
+
+}
+.techfont{
+  font-family: 'Russo One', sans-serif;
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+.techfont-precised-list{
+  font-family: 'Russo One', sans-serif;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+.techfont-nit-paper{
+  font-family: 'Geo';
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+.navigation-color{
+  background-color: black;
+}
+.nav-item-color-and-bottom-margin{
+  color: #C9C9BC;
+  margin-bottom:0.3em;
+}
+.navbar-fixed-top{
+  top: 0em;
+}
+.welcome-below{
+  margin-top:0.5em;
+}
+.color1{
+    background-color: #5ccded;
+}
+.center{
+  text-align: center;
+  align-content: center;
+}
+.home-brand{
+    font-size:1.3em;
+}
+ol{
+  margin-left: 1em;
+}
+
+.nav-tech{
+  font-size: 1.25em;
+  margin-right: 0.8em;
+  margin-bottom: -0.7em;
+}
+.nav-tech-home{
+  font-size: 1.4em;
+  margin-right: 0.5em;
+  margin-bottom: -0.7em;
+}
+.zoom:hover {
+  transform: scale(1.03); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+
+.text-wrapper{
+  width: 50%;
+  position: relative;
+  margin-top: -5%;
+  margin-left: 18%;
+}
+.text-wrapper h1{
+  text-align: center;
+  font-size: 4vw;
+}
+a:hover {
+  text-decoration: none;
+}
+
+
+
+
+/* Pata nhi kaha use ho rahe */
+.mt-2{
+  margin-top: 2%;
+}
+.bg-notes-paper
+{
+  height: 50%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+.on_image {
+  position: relative;
+  text-align: center;
+
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+}
+.search-bar{
+  padding-top: 10px;
+  font-size:17px;
+}
+.card-img{
+  width:300px;
+  height:200px;
+}
+.content-wrapper{
+  width:90%;
+  margin:4% 10% 5% 0%;
+}
+.content-wrapper img{
+  width:50%;
+  z-index: -1;
+  opacity:0.5;
+}
+
+
+
+.dont-break-out {
+
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+
+}

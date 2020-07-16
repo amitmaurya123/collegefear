@@ -1,0 +1,49 @@
+{% extends 'basic_app/base.html' %}
+{% load static %}
+{% block body_block %}
+
+<div class="precised-list-container">
+
+<div class="container jumbotron techfont dont-break-out">
+
+  {% if not exam_list %}
+    <h3>No Paper here!<h3>
+    <h3>Do you have any, <a href="{% url 'upload_paper' %}">upload now!</a></h3>
+    <h3><a href="{% url 'about' %}">See How?</a></h3>
+  {%endif%}
+
+  {% for item in exam_list %}
+  {% if item.branch %}
+    <div class="container">
+
+            <h4>Submitted by: {{item.name.first_name|title}} {{item.name.last_name|title}}</h4>
+            <h4>Professor: {{item.professor|title}}</h4>
+            <h4>Branch: {{item.branch}}</h4>
+            <h4>Semester: {{item.semester}}</h4>
+            <h4>Subject: {{item.subject}}</h4>
+            <h4>File: {{item.file}}</h4>
+            <h4>Sessional: {{item.sessional}}</h4>
+            <h4>Year: {{item.year}}</h4>
+
+
+
+
+      {% if item.published_date %}
+
+        <h4><a href="{% url 'pdf_download' pk=item.pk %}">Download</a></h4>
+      {% elif not item.published_date and user.is_authenticated and user.is_superuser %}
+      <h4>{{item.description}}</h4>
+      <p>  <a href="{% url 'paper_publish' pk=item.pk %}">Publish</a>
+        <a href="{% url 'pdf_download' pk=item.pk %}">Check</a></p>
+        <p><a href="{% url 'paper_remove' pk=item.pk %}">Delete</a></p>
+      {% endif %}
+
+    </div>
+
+
+    <hr>
+    {% endif %}
+  {% endfor %}
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>Exam</title>
+
+        <!-- Latest compiled and minified CSS -->
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+          <!--{ MEDIUM STYLE EDITOR}-->
+        <script src="//cdn.jsdelivr.net/medium-editor/latest/js/medium-editor.min.js"></script>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/medium-editor/latest/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
+
+
+        <!--{ Custom CSS}-->
+        <link rel="stylesheet" href="{% static 'css/exam.css' %}">
+
+        <!--{ Fonts}-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Russo+One" rel="stylesheet">
+
+    </head>
+
+
+
+<body class='loader'>
+
+
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+
+      <ul class="nav navbar-nav">
+        <li><a class='navbar-brand bigbrand' href="{% url 'exam_list' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a class="navbar-link" href="{% url 'admin:index' %}">Admin</a></li>
+        <li><a class="navbar-link" href="{% url 'register' %}">Register</a></li>
+        <li><a href="https://www.github.com">Github</a></li>
+        <li><a href="https://www.linkedin.com">LinkedIn</a></li>
+        <li><a href="https://www.youceed.com">Youceed</a></li>
+
+        <li>
+        <span class="dropdown">
+            <a id="dLabel" role="button" data-toggle="dropdown"  data-target="" href="">
+                Branch <span class="caret"></span>
+            </a>
+    		    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+
+
+              <li class="dropdown-submenu">
+                <a tabindex="-1" href="">CS</a>
+                <ul class="dropdown-menu" id="cslist">
+                  <li><a  href="/show/CS/1/" >1st sem</a></li>
+                  <li><a href="/show/CS/2/">2nd sem</a></li>
+                  <li><a href="/show/CS/3/">3rd sem</a></li>
+                  <li><a  href="/show/CS/4/">4th sem</a></li>
+                  <li><a href="/show/CS/5/">5th sem</a></li>
+                  <li><a href="/show/CS/6/">6th sem</a></li>
+                  <li><a href="/show/CS/7/">7th sem</a></li>
+                  <li><a href="/show/CS/8/">8th sem</a></li>
+                </ul>
+              </li>
+
+              <li class="dropdown-submenu">
+                <a tabindex="-1" href="">PIE</a>
+                <ul class="dropdown-menu" id="pielist">
+                  <li><a  href="/show/PIE/1/">1st sem</a></li>
+                  <li><a href="/show/PIE/2/">2nd sem</a></li>
+                  <li><a href="/show/PIE/3/">3rd sem</a></li>
+                  <li><a  href="/show/PIE/4/">4th sem</a></li>
+                  <li><a href="/show/PIE/5/">5th sem</a></li>
+                  <li><a href="/show/PIE/6/">6th sem</a></li>
+                  <li><a href="/show/PIE/7/">7th sem</a></li>
+                  <li><a href="/show/PIE/8/">8th sem</a></li>
+                </ul>
+              </li>
+
+              <li class="dropdown-submenu">
+                <a tabindex="-1" href="">ME</a>
+                <ul class="dropdown-menu">
+                  <li><a  href="/show/ME/1/">1st sem</a></li>
+                  <li><a href="/show/ME/2/">2nd sem</a></li>
+                  <li><a href="/show/ME/3/">3rd sem</a></li>
+                  <li><a  href="/show/ME/4/">4th sem</a></li>
+                  <li><a href="/show/ME/5/">5th sem</a></li>
+                  <li><a href="/show/ME/6/">6th sem</a></li>
+                  <li><a href="/show/ME/7/">7th sem</a></li>
+                  <li><a href="/show/ME/8/">8th sem</a></li>
+                </ul>
+              </li>
+
+              <li class="dropdown-submenu">
+                <a tabindex="-1" href="">ECE</a>
+                <ul class="dropdown-menu">
+                  <li><a  href="/show/ECE/1/">1st sem</a></li>
+                  <li><a href="/show/ECE/2/">2nd sem</a></li>
+                  <li><a href="/show/ECE/3/">3rd sem</a></li>
+                  <li><a  href="/show/ECE/4/">4th sem</a></li>
+                  <li><a href="/show/ECE/5/">5th sem</a></li>
+                  <li><a href="/show/ECE/6/">6th sem</a></li>
+                  <li><a href="/show/ECE/7/">7th sem</a></li>
+                  <li><a href="/show/ECE/8/">8th sem</a></li>
+                </ul>
+              </li>
+
+              <li class="dropdown-submenu">
+                <a tabindex="-1" href="">CE</a>
+                <ul class="dropdown-menu">
+                  <li><a  href="/show/CE/1/">1st sem</a></li>
+                  <li><a href="/show/CE/2/">2nd sem</a></li>
+                  <li><a href="/show/CE/3/">3rd sem</a></li>
+                  <li><a  href="/show/CE/4/">4th sem</a></li>
+                  <li><a href="/show/CE/5/">5th sem</a></li>
+                  <li><a href="/show/CE/6/">6th sem</a></li>
+                  <li><a href="/show/CE/7/">7th sem</a></li>
+                  <li><a href="/show/CE/8/">8th sem</a></li>
+                </ul>
+              </li>
+
+              <li class="dropdown-submenu">
+                <a tabindex="-1" href="">EE</a>
+                <ul class="dropdown-menu">
+                  <li><a  href="/show/EE/1/">1st sem</a></li>
+                  <li><a href="/show/EE/2/">2nd sem</a></li>
+                  <li><a href="/show/EE/3/">3rd sem</a></li>
+                  <li><a  href="/show/EE/4/">4th sem</a></li>
+                  <li><a href="/show/EE/5/">5th sem</a></li>
+                  <li><a href="/show/EE/6/">6th sem</a></li>
+                  <li><a href="/show/EE/7/">7th sem</a></li>
+                  <li><a href="/show/EE/8/">8th sem</a></li>
+                </ul>
+              </li>
+
+              <li class="dropdown-submenu">
+                <a tabindex="-1" href="">IT</a>
+                <ul class="dropdown-menu">
+                  <li><a  href="/show/IT/1/">1st sem</a></li>
+                  <li><a href="/show/IT/2/">2nd sem</a></li>
+                  <li><a href="/show/IT/3/">3rd sem</a></li>
+                  <li><a  href="/show/IT/4/">4th sem</a></li>
+                  <li><a href="/show/IT/5/">5th sem</a></li>
+                  <li><a href="/show/IT/6/">6th sem</a></li>
+                  <li><a href="/show/IT/7/">7th sem</a></li>
+                  <li><a href="/show/IT/8/">8th sem</a></li>
+                </ul>
+              </li>
+
+            </ul>
+        </span>
+      </li>
+    </ul>
+
+
+      <ul class="nav navbar-nav navbar-right">
+       {% if user.is_authenticated %}
+        <li>
+          <a href="{% url 'upload_paper' %}" >Upload Paper</a>
+        </li>
+        {% if user.is_superuser %}
+        <li>
+          <a href="{% url 'paper_draft_list' %}">Drafts</a>
+        </li>
+        {% endif %}
+        <li>
+          <a href="{% url 'logout'%}" >Log out</a>
+        </li>
+
+        <li>
+          <a >Welcome: {{ user.username }}</a>
+        </li>
+          {% else %}
+          <li><a class='nav navbar-right' href="{% url 'login' %}" ><span class="glyphicon glyphicon-user"></span></a></li>
+        {% endif %}
+      </ul>
+
+  </div>
+</nav>
+
+  <!--{ The actual blog posts}-->
+
+        {%block body_block%}
+
+        {%endblock%}
+
+<input type="hidden" id="branch_field" value="">
+<input type="hidden" id="semester_field" value="">
+
+
+
+<!--{ SCRIPTS}-->
+
+<script type="text/javascript" src="{% static 'js/exam.js' %}"></script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script>
+   var items=document.querySelectorAll("cslist li");
+   for(var i=0;i<items.length;i++){
+     items[i].onclick=function(){
+       sem_val=$(this).text();
+       branch_value="CS";
+       document.getElementById('semester_field').setAttribute('value',sem_val);
+       document.getElementById('branch_field').setAttribute('value',branch_value);
+
+
+     };
+   }
+
+   var items=document.querySelectorAll("pielist li");
+   for(var i=0;i<items.length;i++){
+     items[i].onclick=function(){
+       sem_val=$(this).text();
+       branch_value="PIE";
+       document.getElementById('semester_field').setAttribute('value',sem_val);
+       document.getElementById('branch_field').setAttribute('value',branch_value);
+
+
+     };
+   }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+{% extends 'basic_app/base.html' %}
+{% load static %}
+{% block body_block %}
+<div class="jumbotron techfont notes-or-paper-container">
+  <div class="container">
+    <p>College Name: {{college}}</p>
+    <p>Branch: {{branch}}</p>
+    <p>Semester: {{sem}}</p>
+
+
+
+<div class="row">
+<div class="col-sm-2"></div>
+<div class="col-sm-4 zoom">
+<a href="NOTES/show/{{college}}/{{branch}}/{{sem}}/">
+  <div class="content-wrapper bg-notes">
+
+    <div class="text-wrapper">
+      <h1>NOTES</h1>
+    </div>
+  </div>
+</div></a>
+
+<div class="col-sm-2">
+
+</div>
+
+<div class="col-sm-4 zoom">
+<a href="PAPER/show/{{college}}/{{branch}}/{{sem}}/">
+  <div class="content-wrapper bg-exam">
+
+    <div class="text-wrapper">
+      <h1>PAPER</h1>
+    </div>
+  </div>
+</div></a>
+
+</div>
+
+</div>
+</div>
+
+
+
+{% endblock %}

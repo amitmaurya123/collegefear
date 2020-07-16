@@ -1,0 +1,32 @@
+{% extends 'basic_app/base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% block body_block %}
+<div class="row">
+  <div class="col-sm-12">
+    <div class="bg-upload-paper">
+
+      <div class="container upload-paper-container" >
+
+              <div class="row techfont-upload-paper">
+                <div class="col-md-3"></div>
+                <div class="col-md-7">
+                  <form enctype="multipart/form-data" method="POST" id='upload_paper'>
+                    {% csrf_token %}
+                    {% bootstrap_form form %}
+                    <input type="submit" value="Upload" class="btn btn-primary">
+                  </form>
+                  <div class="progress progress-bar-container" id="progress" style="display:none;">
+                    <div id="progressBar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                      0%
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+        </div>
+     </div>
+  </div>
+</div>
+
+{% endblock %}

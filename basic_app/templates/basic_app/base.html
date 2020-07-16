@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+      <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Latest compiled and minified CSS -->
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+
+        <!-- Add icon library -->
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+          <!--{ MEDIUM STYLE EDITOR}-->
+        <script src="//cdn.jsdelivr.net/medium-editor/latest/js/medium-editor.min.js"></script>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/medium-editor/latest/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
+
+
+        <!--{ Custom CSS}-->
+        <link rel="stylesheet" href="{% static 'css/exam.css' %}">
+
+        <!--{ Fonts}-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Russo+One" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Galada&family=Geo&display=swap" rel="stylesheet">
+        <!--{Sweet Alert}-->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+        <!--{ Custom JS}-->
+        <script src="{% static 'js/exam.js' %}"></script>
+
+    </head>
+
+
+
+<body>
+  <div id="container">
+  <div id="main">
+
+
+  <div class="row">
+    <div class="col-sm-12">
+      <!--<div class="container">-->
+
+
+        <nav class="navbar navbar-expand-lg navbar-fixed-top navigation-color fixed-top">
+        <a class="navbar-brand" style="color:red;" href="{% url 'exam_list' %}">College Fear.com</a>
+      <button class="navbar-toggler navbar-light bg-light" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item nav-tech-home">
+            <a class="nav-link nav-item-color-and-bottom-margin" href="{% url 'exam_list' %}">Home</a>
+          </li>
+          <li class="nav-item nav-tech">
+            <a class="nav-link nav-item-color-and-bottom-margin" href="{% url 'about' %}">About</a>
+          </li>
+          <li class="nav-item nav-tech">
+            <a class="nav-link nav-item-color-and-bottom-margin" href="{% url 'admin:index' %}">Admin</a>
+          </li>
+          <li class="nav-item nav-tech">
+            <a class="nav-link nav-item-color-and-bottom-margin" href="{% url 'register' %}">Register</a>
+          </li>
+          <li class="nav-item nav-tech">
+            <a class="nav-link nav-item-color-and-bottom-margin" href="https://www.github.com">Github</a>
+          </li>
+          <li class="nav-item nav-tech">
+            <a class="nav-link nav-item-color-and-bottom-margin" href="https://www.youceed.com">Youceed</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0 navbar-right">
+          {% if user.is_authenticated %}
+          <li class="nav-item nav-tech">
+            <a class="nav-link nav-item-color-and-bottom-margin" href="{% url 'upload_paper' %}">Upload Notes/Paper</a>
+          </li>
+          {% if user.is_superuser %}
+          <li class="nav-item nav-tech">
+            <a class="nav-link nav-item-color-and-bottom-margin" href="{% url 'paper_draft_list' %}">Drafts</a>
+          </li>
+          {% endif %}
+          <li class="nav-item nav-tech">
+            <a class="nav-link nav-item-color-and-bottom-margin" href="{% url 'logout'%}">Logout</a>
+          </li>
+          <li class="nav-item nav-tech">
+            <span class="nav-link nav-item-color-and-bottom-margin welcome-below">Welcome: {{ user.username }}</span>
+          </li>
+          {% else %}
+
+          {% endif %}
+        </ul>
+      </div>
+    </nav>
+    <!--  </div> -->
+        </div>
+  </div>
+
+
+
+    <!--{ The actual blog posts}-->
+  <div class="row">
+    <div class="col-sm-12">
+      {%block body_block%}
+
+
+      {%endblock%}
+
+      {% block footer %}
+      {% endblock %}
+    </div>
+  </div>
+
+
+  </div>  <!--closing of id main -->
+  </div>  <!--closing of id container -->
+
+
+  <div class="footer">
+  <div class="container">
+
+      <nav class="navbar navbar-expand-sm">
+      <button class="navbar-toggler navbar-light bg-light" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <div class="row">
+
+          <div class="col-sm-4 mt-2">
+            <h3 style="color:#5CA1C1">COLLEGE FEAR.COM</h3>
+          </div>
+
+          <div class="col-sm-4 mt-2">
+              <h5><a href="#" onclick="AboutUs();">About Us</a></h5>
+              <h5><a href="#" onclick="TNC();">Terms And Conditions</a></h5>
+              <h5><a href="#" onclick="PrivacyPolicy();">Privacy Policy</a></h5>
+              <h5><a href="https://docs.google.com/forms/d/1TGUbJRZYBB5Ss7tMeaYysExea1Ng3k9wxJUHNtE4rZw/viewform?edit_requested=true" target="_blank">Campus Ambassador Programme</a></h5>
+          </div>
+
+          <div class="col-sm-4">
+                <h4 style="color:#5CA1C1">SOCIAL MEDIA</h4>
+                <p><a href="#" class="fa fa-facebook"> Facebook</a></p>
+                <p><a href="#" class="fa fa-twitter"> Twitter</a></p>
+                <p><a href="#" class="fa fa-youtube"> Youtube</a></p>
+                <p><a href="#" class="fa fa-instagram"> Instagram</a></p>
+          </div>
+
+      </div>
+
+      <div class="row">
+         <div class="col-md-8"></div>
+         <div class="col-md-4">
+           <h5 style="font-size:18px;">Contact Us:<a href="#">collegefearofficial@gmail.com</a></h5>
+         </div>
+      </div>
+      </div>
+    </nav>
+      </div>
+    </div>
+
+
+
+
+
+
+<!--{ SCRIPTS}-->
+
+<script type="text/javascript" src="{% static 'js/exam.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript">
+  function AboutUs()
+  {
+    swal({
+      title: "About Us",
+      text: "1. Transforming lives:- Noting each and everything in classroom is not a easy task for all of us as opportunities are not universal but here you can easily access\
+      online to handwritten notes of each and every lectures of every subject anytime,anywhere and can easily transform your lives into meaningful ways.\n\n\
+      2. Our Beginings:- As a student of engineering college ourself we get to conclude that it is very difficult for some of us to make and arrange class notes\
+      which are definitely required on exams time.So here we come up with those notes at free of cost, initially covering all 31 NIT's in our country.\n\n\
+      3. Interactive Society:-This platform is the best place for a interactive climate among all the students of NIT's,where anyone can contact for any sort of help in\
+      their studies and can easily grow up with their universal talents.",
+      button: "Close",
+    });
+  };
+  function TNC()
+  {
+    swal({
+      title: "Terms And Conditions",
+      text: "College Fear is a educational platform . The material available on site is based on the syllabus , notes and exam conducted in respective colleges.\n\n\
+             We don’t support the students to not attend the class or not concentrate on teacher.\
+              We are here just to support those who are not able to attend classes or have not made notes due to some genuine reason.\n\n\
+              This site is meant only for educational purpose.\n\n\
+              Use of content:\n\
+              The use of properties of site like site logo, site name or any other content provided on the site is prohibited.\n\
+              You may not sell or modify the content of this site or reproduce, display, publicly perform, distribute, or otherwise use the material\
+               in any way for any public or commercial purpose without the respective organization’s or entity’s written permission.\n\n\
+            Disclaimer:\n\
+            As material for different colleges are different so user’s are requested to kindly check the material before start studying i.e.  related to them or not.\
+              ",
+      button: "Close",
+    });
+  };
+  function PrivacyPolicy()
+  {
+    swal({
+      title: "Privacy Policy",
+      text: "We respect the privacy of all parties viewing and otherwise making use of the website, and is committed to protecting their privacy.\n\nUser information :  To avail certain services on our website, users are required to provide certain information for the registration process namely: - a)name b)college name c)email id d)branch\
+        e)semester.\n\nThe Information as supplied by the users enables us to improve our application and provide you the most user-friendly experience.\n\n Information Security :  All information gathered on our website is securely stored within our controlled database. We may change our Privacy Policy from time to time to incorporate necessary future\
+        changes. Of course, our use of any information we gather will always be consistent with the policy under which the information was collected, regardless of what\
+         the new policy may be.",
+      button: "Close",
+    });
+  }
+</script>
+
+</body>
+</html>

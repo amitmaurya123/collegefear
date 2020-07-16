@@ -1,0 +1,32 @@
+{% extends 'basic_app/base.html' %}
+{% load bootstrap4 %}
+
+{% block body_block %}
+  <div class="jumbotron techfont">
+
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-7">
+    {% if form.errors %}
+        <p>Your username and password didn't match.Please try again!</p>
+    {% endif %}
+
+
+
+
+        <h2>Please Login: </h2>
+        <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+          {% bootstrap_form form %}     <!--ye form provided by django-->
+
+          <input type="submit" class='btn btn-primary' value="Login" />
+          <!--  <input type="hidden" name="next" value="{{ next }}" />-->
+        </form>
+        <a href="{% url 'password_reset' %}">Forgot Password?</a>
+        <p></p>
+        <p>Do not have account?<a href="{% url 'register' %}">Create One</a></p>
+      </div>
+    </div>
+
+  </div>
+{% endblock %}

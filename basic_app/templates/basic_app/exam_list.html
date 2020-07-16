@@ -1,0 +1,108 @@
+{% extends 'basic_app/base.html' %}
+{% load static %}
+{% block body_block %}
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="bg-exam-list">
+
+      <div class="jumbotron container search-bar-container color1 center" >
+      <h1 class="display-4 techfont-nit-paper" style="color:red;">College Fear.com</h1>
+      <hr class="my-4">
+
+      <form>
+
+            {% if user.is_authenticated %}
+
+            <p class="techfont-exam-list">Get Notes And Previous Year Question Paper Of Your College.</p>
+            <p class="techfont-exam-list">And You Know What? It Is Absolutely Free!</p>
+            {% else %}
+
+                  <p class="techfont-exam-list">Get Notes And Previous Year Question Papers Of Your College.</p>
+                  <p class="techfont-exam-list">And You Know What? It Is Absolutely Free!</p>
+                  <p class="techfont-exam-list">Join Us Now!</p>
+                  <a class="btn btn-primary btn-md " href="{% url 'register' %}" role="button">Sign Up!</a>
+                  <a class="btn btn-primary btn-md " href="{% url 'login' %}" role="button">Log In!</a>
+
+
+            {% endif %}
+
+      </form>
+
+      <div class="search-bar ">
+
+
+            <form method = "POST" action = "{% url 'search_bar_view' %}">
+              {% csrf_token %}
+              <select name = "college">
+
+                          <option value="NIT-AGARTALA">NIT-AGARTALA</option>
+                          <option value="NIT-ALLAHABAD">NIT-ALLAHABAD</option>
+                          <option value="NIT-ANDHRAPRADESH">NIT-ANDHRAPRADESH</option>
+                          <option value="NIT-ARUNACHALPRADESH">NIT-ARUNACHALPRADESH</option>
+                          <option value="NIT-BHOPAL">NIT-BHOPAL</option>
+                          <option value="NIT-CALICUT">NIT-CALICUT</option>
+                          <option value="NIT-DELHI">NIT-DELHI</option>
+                          <option value="NIT-DURGAPUR">NIT-DURGAPUR</option>
+                          <option value="NIT-GOA">NIT-GOA</option>
+                          <option value="NIT-HAMIRPUR">NIT-HAMIRPUR</option>
+                          <option value="NIT-JAIPUR">NIT-JAIPUR</option>
+                          <option value="NIT-JALANDHAR">NIT-JALANDHAR</option>
+                          <option value="NIT-JAMSHEDPUR">NIT-JAMSHEDPUR</option>
+                          <option value="NIT-KARNATKA">NIT-KARNATKA</option>
+                          <option value="NIT-KURUKSHETRA" selected>NIT-KURUKSHETRA</option>
+                          <option value="NIT-MANIPUR">NIT-MANIPUR</option>
+                          <option value="NIT-MEGHALAYA">NIT-MEGHALAYA</option>
+                          <option value="NIT-MIZORAM">NIT-MIZORAM</option>
+                          <option value="NIT-NAGALAND">NIT-NAGALAND</option>
+                          <option value="NIT-NAGPUR">NIT-NAGPUR</option>
+                          <option value="NIT-PATNA">NIT-PATNA</option>
+                          <option value="NIT-PUDUCHERRY">NIT-PUDUCHERRY</option>
+                          <option value="NIT-RAIPUR">NIT-RAIPUR</option>
+                          <option value="NIT-ROURKELA">NIT-ROURKELA</option>
+                          <option value="NIT-SIKKIM">NIT-SIKKIM</option>
+                          <option value="NIT-SILCHAR">NIT-SILCHAR</option>
+                          <option value="NIT-SRINAGAR">NIT-SRINAGAR</option>
+                          <option value="NIT-SURAT">NIT-SURAT</option>
+                          <option value="NIT-TRICHY">NIT-TRICHY</option>
+                          <option value="NIT-UTTARAKHAND">NIT-UTTARAKHAND</option>
+                          <option value="NIT-WARANGAL">NIT-WARANGAL</option>
+
+              </select>
+              <select name = "branch" >
+                          <option value="CS" selected>CS</option>
+                          <option value="PIE">PIE</option>
+                          <option value="ME">ME</option>
+                          <option value="IT">IT</option>\
+                          <option value="EE">EE</option>
+                          <option value="ECE">ECE</option>
+                          <option value="CE">CE</option>
+              </select>
+              <select name = "sem" >
+                          <option value="1">1st sem</option>
+                          <option value="2">2nd sem</option>
+                          <option value="3">3rd sem</option>
+                          <option value="4" selected>4th sem</option>
+                          <option value="5">5th sem</option>
+                          <option value="6">6th sem</option>
+                          <option value="7">7th sem</option>
+                          <option value="8">8th sem</option>
+              </select>
+              <input  type = "submit" value="Search" class="btn btn-default">
+          </form>
+
+        </div>
+   </div>
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+{% endblock %}
